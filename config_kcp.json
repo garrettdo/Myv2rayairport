@@ -1,0 +1,209 @@
+{
+  "log": {
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 23407,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "c4b9282b-5cff-44a4-a7c1-b936e075d806",
+            "level": 1,
+            "alterId": 64
+          }
+        ]
+      }
+    },
+    {
+      "port": 22088,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "707152b0-f1b5-11ea-81e3-42010aaa0003",
+            "alterId": 16
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "security": "none",
+        "tlsSettings": {},
+        "tcpSettings": {},
+        "httpSettings": {},
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 20,
+          "uplinkCapacity": 900,
+          "downlinkCapacity": 900,
+          "congestion": false,
+          "readBufferSize": 2,
+          "writeBufferSize": 2,
+          "header": {
+            "type": "srtp"
+          }
+        },
+        "wsSettings": {},
+        "quicSettings": {}
+      }
+    },
+    {
+      "port": 55518,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "06088356-f1b7-11ea-aed3-42010aaa0003",
+            "alterId": 16
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "security": "none",
+        "tlsSettings": {},
+        "tcpSettings": {},
+        "httpSettings": {},
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 20,
+          "uplinkCapacity": 900,
+          "downlinkCapacity": 900,
+          "congestion": false,
+          "readBufferSize": 2,
+          "writeBufferSize": 2,
+          "header": {
+            "type": "wireguard"
+          }
+        },
+        "wsSettings": {},
+        "quicSettings": {}
+      }
+    },
+    {
+      "port": 19028,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "79458a78-f25a-11ea-a078-42010aaa0003",
+            "alterId": 16
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "security": "none",
+        "tlsSettings": {},
+        "tcpSettings": {},
+        "httpSettings": {},
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 20,
+          "uplinkCapacity": 900,
+          "downlinkCapacity": 900,
+          "congestion": false,
+          "readBufferSize": 2,
+          "writeBufferSize": 2,
+          "header": {
+            "type": "dtls"
+          }
+        },
+        "wsSettings": {},
+        "quicSettings": {}
+      }
+    },
+    {
+      "port": 22531,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "84f9bb00-f25a-11ea-9abf-42010aaa0003",
+            "alterId": 16
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "security": "none",
+        "tlsSettings": {},
+        "tcpSettings": {},
+        "httpSettings": {},
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 20,
+          "uplinkCapacity": 900,
+          "downlinkCapacity": 900,
+          "congestion": false,
+          "readBufferSize": 2,
+          "writeBufferSize": 2,
+          "header": {
+            "type": "wechat-video"
+          }
+        },
+        "wsSettings": {},
+        "quicSettings": {}
+      }
+    },
+    {
+      "port": 38181,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "43ab4946-f261-11ea-a7bf-42010aaa0003",
+            "alterId": 16
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "security": "none",
+        "tlsSettings": {},
+        "tcpSettings": {},
+        "httpSettings": {},
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 20,
+          "uplinkCapacity": 900,
+          "downlinkCapacity": 900,
+          "congestion": false,
+          "readBufferSize": 2,
+          "writeBufferSize": 2,
+          "header": {
+            "type": "utp"
+          }
+        },
+        "wsSettings": {},
+        "quicSettings": {}
+      }
+    }
+],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
